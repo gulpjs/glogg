@@ -1,0 +1,33 @@
+{
+  "name": "glogg",
+  "version": "0.0.0",
+  "description": "Global logging utility",
+  "main": "index.js",
+  "scripts": {
+    "test": "lab -cv"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phated/glogg"
+  },
+  "keywords": [
+    "global",
+    "log",
+    "logging",
+    "logger",
+    "shared"
+  ],
+  "author": "Blaine Bublitz <blaine@iceddev.com> (http://iceddev.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phated/glogg/issues"
+  },
+  "homepage": "https://github.com/phated/glogg",
+  "dependencies": {
+    "sparkles": "git://github.com/phated/sparkles"
+  },
+  "devDependencies": {
+    "code": "^1.2.1",
+    "lab": "^5.1.1"
+  }
+}
