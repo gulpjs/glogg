@@ -1,0 +1,4 @@
+glogg
+=====
+
+Global logging utility
