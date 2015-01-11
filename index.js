@@ -18,10 +18,6 @@ function getLogger(namespace){
     logger[level] = makeLogLevel(level);
   });
 
-  logger.destroy = function(){
-    logger.removeAllListeners();
-  };
-
   return logger;
 }
 
