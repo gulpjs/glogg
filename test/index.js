@@ -22,9 +22,7 @@ describe('glogg', function(){
   });
 
   afterEach(function(done){
-    expect(global['glogg-test']).to.exist();
-    logger.destroy();
-    expect(global['glogg-test']).to.not.exist();
+    logger.remove();
     done();
   });
 

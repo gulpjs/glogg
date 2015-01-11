@@ -4,7 +4,7 @@
   "description": "Global logging utility",
   "main": "index.js",
   "scripts": {
-    "test": "lab -cv"
+    "test": "lab -cv --globals store@sparkles"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/phated/glogg",
   "dependencies": {
-    "sparkles": "git://github.com/phated/sparkles"
+    "sparkles": "^1.0.0"
   },
   "devDependencies": {
     "code": "^1.2.1",
