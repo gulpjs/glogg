@@ -28,6 +28,11 @@ logger.info([1, 2, 3]);
 logger.on('info', function(msg){
   // do something with msg
 });
+
+// must be handled to avoid crashing process
+logger.on('error', function(msg){
+  // now it won't crash
+});
 ```
 
 ## API
