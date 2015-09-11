@@ -48,32 +48,32 @@ __Note: This module makes no assumptions about the log levels and they will alwa
 be emitted.  If you are looking to filter some out, your listeners will need to have
 extra logic.__
 
-### debug(msg...)
+### debug(msg)
 
-Emits a `debug` event with the given arguments.
+Emits a `debug` event with the given `msg`.
 
-If the first argument is a string, the arguments are passed through node's
+If the first argument is a string, all arguments are passed to node's
 `util.format()` before being emitted.
 
-### info(msg...)
+### info(msg)
 
-Emits a `info` event with the given arguments.
+Emits a `info` event with the given `msg`.
 
-If the first argument is a string, the arguments are passed through node's
+If the first argument is a string, all arguments are passed to node's
 `util.format()` before being emitted.
 
-### warn(msg...)
+### warn(msg)
 
-Emits a `warn` event with the given arguments.
+Emits a `warn` event with the given `msg`.
 
-If the first argument is a string, the arguments are passed through node's
+If the first argument is a string, all arguments are passed to node's
 `util.format()` before being emitted.
 
-### error(msg...)
+### error(msg)
 
-Emits a `error` event with the given arguments.
+Emits a `error` event with the given `msg`.
 
-If the first argument is a string, the arguments are passed through node's
+If the first argument is a string, all arguments are passed to node's
 `util.format()` before being emitted.
 
 __Note: You must handle this event in some way or the node process will crash
