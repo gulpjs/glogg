@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/undertakerjs/glogg",
   "dependencies": {
-    "sparkles": "git://github.com/phated/sparkles"
+    "sparkles": "^1.0.0"
   },
   "devDependencies": {
     "code": "^1.2.1",
