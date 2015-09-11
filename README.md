@@ -32,7 +32,7 @@ logger.on('info', function(msg){
 
 ## API
 
-This module augments a [`sparkles`]() EventEmitter object with 4 methods:
+This module augments a [`sparkles`](https://github.com/phated/sparkles) EventEmitter object with 4 methods:
 `debug()`, `info()`, `warn()` and `error()`. When called, these methods emit
 an event with the same name.  If the first argument is a string, the arguments
 are passed through node's `util.format()` before being emitted.  Other parts
