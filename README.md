@@ -23,6 +23,11 @@ logger.info('%s style!', 'printf');
 // log anything
 logger.debug({ my: 'obj' });
 logger.info([1, 2, 3]);
+
+// somewhere else
+logger.on('info', function(msg){
+  // do something with msg
+});
 ```
 
 ## API
