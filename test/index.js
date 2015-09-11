@@ -5,8 +5,6 @@ var expect = require('code').expect;
 
 var describe = lab.describe;
 var it = lab.it;
-var before = lab.before;
-var after = lab.after;
 var beforeEach = lab.beforeEach;
 var afterEach = lab.afterEach;
 
