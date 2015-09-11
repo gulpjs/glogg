@@ -82,6 +82,11 @@ If the first argument is a string, all arguments are passed to node's
 __Note: You must handle this event in some way or the node process will crash
 when an `error` event is emitted.__
 
+#### logger.on(event, fn)
+
+Standard API from node's `EventEmitter`.  Use this to listen for events from
+the logger methods.
+
 ## License
 
 MIT
