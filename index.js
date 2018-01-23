@@ -11,7 +11,7 @@ var levels = [
   'error'
 ];
 
-function getLogger(namespace){
+function getLogger(namespace) {
   var logger = sparkles(namespace);
 
   levels.forEach(function(level){
@@ -21,9 +21,9 @@ function getLogger(namespace){
   return logger;
 }
 
-function makeLogLevel(level){
+function makeLogLevel(level) {
   return function(msg){
-    if(typeof msg === 'string'){
+    if (typeof msg === 'string') {
       msg = format.apply(null, arguments);
     }
 
