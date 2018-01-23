@@ -1,12 +1,6 @@
 'use strict';
 
-var lab = exports.lab = require('lab').script();
-var expect = require('code').expect;
-
-var describe = lab.describe;
-var it = lab.it;
-var beforeEach = lab.beforeEach;
-var afterEach = lab.afterEach;
+var expect = require('expect');
 
 var glogg = require('../');
 
@@ -26,7 +20,7 @@ describe('glogg', function(){
 
   it('emits a debug event when debug method is called', function(done){
     logger.on('debug', function(msg){
-      expect(msg).to.equal('test');
+      expect(msg).toEqual('test');
       done();
     });
 
@@ -35,7 +29,7 @@ describe('glogg', function(){
 
   it('emits a info event when info method is called', function(done){
     logger.on('info', function(msg){
-      expect(msg).to.equal('test');
+      expect(msg).toEqual('test');
       done();
     });
 
@@ -44,7 +38,7 @@ describe('glogg', function(){
 
   it('emits a warn event when warn method is called', function(done){
     logger.on('warn', function(msg){
-      expect(msg).to.equal('test');
+      expect(msg).toEqual('test');
       done();
     });
 
@@ -53,7 +47,7 @@ describe('glogg', function(){
 
   it('emits a error event when error method is called', function(done){
     logger.on('error', function(msg){
-      expect(msg).to.equal('test');
+      expect(msg).toEqual('test');
       done();
     });
 
@@ -62,7 +56,7 @@ describe('glogg', function(){
 
   it('formats a string message with util.format syntax', function(done){
     logger.on('debug', function(msg){
-      expect(msg).to.equal('test something');
+      expect(msg).toEqual('test something');
       done();
     });
 
@@ -73,7 +67,7 @@ describe('glogg', function(){
     var expected = { test: 'something' };
 
     logger.on('debug', function(msg){
-      expect(msg).to.deep.equal(expected);
+      expect(msg).toEqual(expected);
       done();
     });
 
