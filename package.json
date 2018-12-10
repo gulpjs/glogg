@@ -1,6 +1,6 @@
 {
   "name": "glogg",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Global logging utility",
   "author": "Gulp Team <team@gulpjs.com> (http://gulpjs.com/)",
   "contributors": [
