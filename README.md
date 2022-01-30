@@ -1,12 +1,12 @@
 <p align="center">
-  <a href="http://gulpjs.com">
+  <a href="https://gulpjs.com">
     <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">
   </a>
 </p>
 
 # glogg
 
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Travis Build Status][travis-image]][travis-url] [![AppVeyor Build Status][appveyor-image]][appveyor-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Gitter chat][gitter-image]][gitter-url]
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][ci-image]][ci-url] [![Coveralls Status][coveralls-image]][coveralls-url]
 
 Global logging utility.
 
@@ -97,18 +97,15 @@ the logger methods.
 
 MIT
 
-[downloads-image]: http://img.shields.io/npm/dm/glogg.svg
+
+<!-- prettier-ignore-start -->
+[downloads-image]: https://img.shields.io/npm/dm/glogg.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/glogg
-[npm-image]: http://img.shields.io/npm/v/glogg.svg
+[npm-image]: https://img.shields.io/npm/v/glogg.svg?style=flat-square
 
-[travis-url]: https://travis-ci.org/gulpjs/glogg
-[travis-image]: http://img.shields.io/travis/gulpjs/glogg.svg?label=travis-ci
-
-[appveyor-url]: https://ci.appveyor.com/project/gulpjs/glogg
-[appveyor-image]: https://img.shields.io/appveyor/ci/gulpjs/glogg.svg?label=appveyor
+[ci-url]: https://github.com/gulpjs/glogg/actions?query=workflow:dev
+[ci-image]: https://img.shields.io/github/workflow/status/gulpjs/glogg/dev?style=flat-square
 
 [coveralls-url]: https://coveralls.io/r/gulpjs/glogg
-[coveralls-image]: http://img.shields.io/coveralls/gulpjs/glogg/master.svg
-
-[gitter-url]: https://gitter.im/gulpjs/gulp
-[gitter-image]: https://badges.gitter.im/gulpjs/gulp.svg
+[coveralls-image]: https://img.shields.io/coveralls/gulpjs/glogg/master.svg?style=flat-square
+<!-- prettier-ignore-end -->
