@@ -31,29 +31,29 @@ logger.debug({ my: 'obj' });
 logger.info([1, 2, 3]);
 
 // somewhere else
-logger.on('info', function(msg){
+logger.on('info', function (msg) {
   // do something with msg
 });
 
 // must be handled to avoid crashing process
-logger.on('error', function(msg){
+logger.on('error', function (msg) {
   // now it won't crash
 });
 ```
 
 ## API
 
-__Note: This module makes no assumptions about the log levels and they will always
-be emitted.  If you are looking to filter some out, your listeners will need to have
-extra logic.__
+**Note: This module makes no assumptions about the log levels and they will always
+be emitted. If you are looking to filter some out, your listeners will need to have
+extra logic.**
 
 ### getLogger([namespace])
 
 Create a new logger at the given namespace (or the default if no namespace is provided).
 Returns an augmented [`sparkles`](https://github.com/phated/sparkles) EventEmitter object
 with 4 methods: `debug()`, `info()`, `warn()` and `error()`. When called, these methods emit
-an event with the same name.  If the first argument is a string, the arguments
-are passed through node's `util.format()` before being emitted.  Other parts
+an event with the same name. If the first argument is a string, the arguments
+are passed through node's `util.format()` before being emitted. Other parts
 of a node program can get the logger by namespace and listen for the events to
 be emitted.
 
@@ -85,18 +85,17 @@ Emits a `error` event with the given `msg`.
 If the first argument is a string, all arguments are passed to node's
 `util.format()` before being emitted.
 
-__Note: You must handle this event in some way or the node process will crash
-when an `error` event is emitted.__
+**Note: You must handle this event in some way or the node process will crash
+when an `error` event is emitted.**
 
 #### logger.on(event, fn)
 
-Standard API from node's `EventEmitter`.  Use this to listen for events from
+Standard API from node's `EventEmitter`. Use this to listen for events from
 the logger methods.
 
 ## License
 
 MIT
-
 
 <!-- prettier-ignore-start -->
 [downloads-image]: https://img.shields.io/npm/dm/glogg.svg?style=flat-square
