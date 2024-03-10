@@ -19,10 +19,11 @@ function getLogger(namespace) {
 function makeLogLevel(self, level) {
   return function (msg) {
     if (typeof msg === 'string') {
-      msg = format.apply(null, arguments);
+      self.emit(level, format.apply(null, arguments));
+    } else {
+      var args = Array.prototype.slice.call(arguments);
+      self.emit.apply(self, [level].concat(args));
     }
-
-    self.emit(level, msg);
   };
 }
 

@@ -57,33 +57,41 @@ are passed through node's `util.format()` before being emitted. Other parts
 of a node program can get the logger by namespace and listen for the events to
 be emitted.
 
-#### logger.debug(msg)
+#### logger.debug(msg, ...args)
 
 Emits a `debug` event with the given `msg`.
 
 If the first argument is a string, all arguments are passed to node's
 `util.format()` before being emitted.
 
-#### logger.info(msg)
+If the first argument is not a string, all arguments will be emitted directly.
+
+#### logger.info(msg, ...args)
 
 Emits a `info` event with the given `msg`.
 
 If the first argument is a string, all arguments are passed to node's
 `util.format()` before being emitted.
 
-#### logger.warn(msg)
+If the first argument is not a string, all arguments will be emitted directly.
+
+#### logger.warn(msg, ...args)
 
 Emits a `warn` event with the given `msg`.
 
 If the first argument is a string, all arguments are passed to node's
 `util.format()` before being emitted.
 
-#### logger.error(msg)
+If the first argument is not a string, all arguments will be emitted directly.
+
+#### logger.error(msg, ...args)
 
 Emits a `error` event with the given `msg`.
 
 If the first argument is a string, all arguments are passed to node's
 `util.format()` before being emitted.
+
+If the first argument is not a string, all arguments will be emitted directly.
 
 **Note: You must handle this event in some way or the node process will crash
 when an `error` event is emitted.**
@@ -103,7 +111,7 @@ MIT
 [npm-image]: https://img.shields.io/npm/v/glogg.svg?style=flat-square
 
 [ci-url]: https://github.com/gulpjs/glogg/actions?query=workflow:dev
-[ci-image]: https://img.shields.io/github/workflow/status/gulpjs/glogg/dev?style=flat-square
+[ci-image]: https://img.shields.io/github/actions/workflow/status/gulpjs/glogg/dev.yml?style=flat-square
 
 [coveralls-url]: https://coveralls.io/r/gulpjs/glogg
 [coveralls-image]: https://img.shields.io/coveralls/gulpjs/glogg/master.svg?style=flat-square
