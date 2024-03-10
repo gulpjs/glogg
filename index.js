@@ -21,7 +21,8 @@ function makeLogLevel(self, level) {
     if (typeof msg === 'string') {
       self.emit(level, format.apply(null, arguments));
     } else {
-      self.emit.apply(self, Array.prototype.slice.call(arguments));
+      var args = Array.prototype.slice.call(arguments);
+      self.emit.apply(self, [level].concat(args));
     }
   };
 }
