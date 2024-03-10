@@ -73,6 +73,18 @@ describe('glogg', function () {
     logger.debug(expected);
   });
 
+  it('emits all arguments to the log if non-string message', function (done) {
+    var expected = { test: 'something' };
+
+    logger.on('debug', function (msg, extra) {
+      expect(msg).toEqual(expected);
+      expect(extra).toEqual(true);
+      done();
+    });
+
+    logger.debug(expected, true);
+  });
+
   it('allows you to "destructure" the individual log-level functions', function (done) {
     var debug = logger.debug;
 
