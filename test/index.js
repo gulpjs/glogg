@@ -2,6 +2,8 @@
 
 var expect = require('expect');
 
+var sparklesLegacy = require('sparkles/legacy');
+
 var glogg = require('../');
 
 describe('glogg', function () {
@@ -94,5 +96,83 @@ describe('glogg', function () {
     });
 
     debug('test');
+  });
+});
+
+describe('events on legacy namespace', function () {
+  var logger;
+  var legacy;
+
+  beforeEach(function (done) {
+    var namespace = 'glogg-test';
+    logger = glogg(namespace);
+    legacy = sparklesLegacy(namespace);
+    done();
+  });
+
+  afterEach(function (done) {
+    logger.remove();
+    legacy.remove();
+    done();
+  });
+
+  it('emits deprecated event and forwards debug to logger', function (done) {
+    var deprecated = false;
+    logger.on('deprecated', function () {
+      deprecated = true;
+    });
+
+    logger.on('debug', function (msg) {
+      expect(deprecated).toEqual(true);
+      expect(msg).toEqual('test');
+      done();
+    });
+
+    legacy.emit('debug', 'test');
+  });
+
+  it('emits deprecated event and forwards info to logger', function (done) {
+    var deprecated = false;
+    logger.on('deprecated', function () {
+      deprecated = true;
+    });
+
+    logger.on('info', function (msg) {
+      expect(deprecated).toEqual(true);
+      expect(msg).toEqual('test');
+      done();
+    });
+
+    legacy.emit('info', 'test');
+  });
+
+  it('emits deprecated event and forwards warn to logger', function (done) {
+    var deprecated = false;
+    logger.on('deprecated', function () {
+      deprecated = true;
+    });
+
+    logger.on('warn', function (msg) {
+      expect(deprecated).toEqual(true);
+      expect(msg).toEqual('test');
+      done();
+    });
+
+    legacy.emit('warn', 'test');
+  });
+
+  it('emits deprecated event and forwards error to logger', function (done) {
+    var deprecated = false;
+    logger.on('deprecated', function () {
+      deprecated = true;
+    });
+
+    logger.on('error', function (msg) {
+      expect(deprecated).toEqual(true);
+      expect(msg).toEqual('test');
+      done();
+    });
+
+    legacy.emit('error', 'test');
   });
 });
