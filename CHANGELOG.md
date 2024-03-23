@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://www.github.com/gulpjs/glogg/compare/v2.1.0...v2.2.0) (2024-03-23)
+
+
+### Features
+
+* Re-emit messages from legacy namespace on new namespace ([#9](https://www.github.com/gulpjs/glogg/issues/9)) ([88350e4](https://www.github.com/gulpjs/glogg/commit/88350e44603b24b7b8295ee996a7afa7ba90ccb6))
+
 ## [2.1.0](https://www.github.com/gulpjs/glogg/compare/v2.0.0...v2.1.0) (2024-03-10)
 
 
