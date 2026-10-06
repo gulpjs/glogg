@@ -1,16 +1,16 @@
-'use strict';
+"use strict";
 
-var expect = require('expect');
+var expect = require("expect");
 
-var sparklesLegacy = require('sparkles/legacy');
+var sparklesLegacy = require("sparkles/legacy");
 
-var glogg = require('../');
+var glogg = require("../");
 
-describe('glogg', function () {
+describe("glogg", function () {
   var logger;
 
   beforeEach(function (done) {
-    logger = glogg('glogg-test');
+    logger = glogg("glogg-test");
     done();
   });
 
@@ -19,55 +19,55 @@ describe('glogg', function () {
     done();
   });
 
-  it('emits a debug event when debug method is called', function (done) {
-    logger.on('debug', function (msg) {
-      expect(msg).toEqual('test');
+  it("emits a debug event when debug method is called", function (done) {
+    logger.on("debug", function (msg) {
+      expect(msg).toEqual("test");
       done();
     });
 
-    logger.debug('test');
+    logger.debug("test");
   });
 
-  it('emits a info event when info method is called', function (done) {
-    logger.on('info', function (msg) {
-      expect(msg).toEqual('test');
+  it("emits a info event when info method is called", function (done) {
+    logger.on("info", function (msg) {
+      expect(msg).toEqual("test");
       done();
     });
 
-    logger.info('test');
+    logger.info("test");
   });
 
-  it('emits a warn event when warn method is called', function (done) {
-    logger.on('warn', function (msg) {
-      expect(msg).toEqual('test');
+  it("emits a warn event when warn method is called", function (done) {
+    logger.on("warn", function (msg) {
+      expect(msg).toEqual("test");
       done();
     });
 
-    logger.warn('test');
+    logger.warn("test");
   });
 
-  it('emits a error event when error method is called', function (done) {
-    logger.on('error', function (msg) {
-      expect(msg).toEqual('test');
+  it("emits a error event when error method is called", function (done) {
+    logger.on("error", function (msg) {
+      expect(msg).toEqual("test");
       done();
     });
 
-    logger.error('test');
+    logger.error("test");
   });
 
-  it('formats a string message with util.format syntax', function (done) {
-    logger.on('debug', function (msg) {
-      expect(msg).toEqual('test something');
+  it("formats a string message with util.format syntax", function (done) {
+    logger.on("debug", function (msg) {
+      expect(msg).toEqual("test something");
       done();
     });
 
-    logger.debug('test %s', 'something');
+    logger.debug("test %s", "something");
   });
 
-  it('does not format a non-string message', function (done) {
-    var expected = { test: 'something' };
+  it("does not format a non-string message", function (done) {
+    var expected = { test: "something" };
 
-    logger.on('debug', function (msg) {
+    logger.on("debug", function (msg) {
       expect(msg).toEqual(expected);
       done();
     });
@@ -75,10 +75,10 @@ describe('glogg', function () {
     logger.debug(expected);
   });
 
-  it('emits all arguments to the log if non-string message', function (done) {
-    var expected = { test: 'something' };
+  it("emits all arguments to the log if non-string message", function (done) {
+    var expected = { test: "something" };
 
-    logger.on('debug', function (msg, extra) {
+    logger.on("debug", function (msg, extra) {
       expect(msg).toEqual(expected);
       expect(extra).toEqual(true);
       done();
@@ -90,21 +90,21 @@ describe('glogg', function () {
   it('allows you to "destructure" the individual log-level functions', function (done) {
     var debug = logger.debug;
 
-    logger.on('debug', function (msg) {
-      expect(msg).toEqual('test');
+    logger.on("debug", function (msg) {
+      expect(msg).toEqual("test");
       done();
     });
 
-    debug('test');
+    debug("test");
   });
 });
 
-describe('events on legacy namespace', function () {
+describe("events on legacy namespace", function () {
   var logger;
   var legacy;
 
   beforeEach(function (done) {
-    var namespace = 'glogg-test';
+    var namespace = "glogg-test";
     logger = glogg(namespace);
     legacy = sparklesLegacy(namespace);
     done();
@@ -116,63 +116,63 @@ describe('events on legacy namespace', function () {
     done();
   });
 
-  it('emits deprecated event and forwards debug to logger', function (done) {
+  it("emits deprecated event and forwards debug to logger", function (done) {
     var deprecated = false;
-    logger.on('deprecated', function () {
+    logger.on("deprecated", function () {
       deprecated = true;
     });
 
-    logger.on('debug', function (msg) {
+    logger.on("debug", function (msg) {
       expect(deprecated).toEqual(true);
-      expect(msg).toEqual('test');
+      expect(msg).toEqual("test");
       done();
     });
 
-    legacy.emit('debug', 'test');
+    legacy.emit("debug", "test");
   });
 
-  it('emits deprecated event and forwards info to logger', function (done) {
+  it("emits deprecated event and forwards info to logger", function (done) {
     var deprecated = false;
-    logger.on('deprecated', function () {
+    logger.on("deprecated", function () {
       deprecated = true;
     });
 
-    logger.on('info', function (msg) {
+    logger.on("info", function (msg) {
       expect(deprecated).toEqual(true);
-      expect(msg).toEqual('test');
+      expect(msg).toEqual("test");
       done();
     });
 
-    legacy.emit('info', 'test');
+    legacy.emit("info", "test");
   });
 
-  it('emits deprecated event and forwards warn to logger', function (done) {
+  it("emits deprecated event and forwards warn to logger", function (done) {
     var deprecated = false;
-    logger.on('deprecated', function () {
+    logger.on("deprecated", function () {
       deprecated = true;
     });
 
-    logger.on('warn', function (msg) {
+    logger.on("warn", function (msg) {
       expect(deprecated).toEqual(true);
-      expect(msg).toEqual('test');
+      expect(msg).toEqual("test");
       done();
     });
 
-    legacy.emit('warn', 'test');
+    legacy.emit("warn", "test");
   });
 
-  it('emits deprecated event and forwards error to logger', function (done) {
+  it("emits deprecated event and forwards error to logger", function (done) {
     var deprecated = false;
-    logger.on('deprecated', function () {
+    logger.on("deprecated", function () {
       deprecated = true;
     });
 
-    logger.on('error', function (msg) {
+    logger.on("error", function (msg) {
       expect(deprecated).toEqual(true);
-      expect(msg).toEqual('test');
+      expect(msg).toEqual("test");
       done();
     });
 
-    legacy.emit('error', 'test');
+    legacy.emit("error", "test");
   });
 });
