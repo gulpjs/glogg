@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
-var format = require('util').format;
+var format = require("util").format;
 
-var sparkles = require('sparkles');
-var legacySparkles = require('sparkles/legacy');
+var sparkles = require("sparkles");
+var legacySparkles = require("sparkles/legacy");
 
-var levels = ['debug', 'info', 'warn', 'error'];
+var levels = ["debug", "info", "warn", "error"];
 
 function getLogger(namespace) {
   var logger = sparkles(namespace);
@@ -18,7 +18,7 @@ function getLogger(namespace) {
     // If anything gets emitted on this namespace, we'll emit the
     // `deprecated` event and re-emit the event on the new logger
     deprecatedLogger.on(level, function () {
-      logger.emit('deprecated');
+      logger.emit("deprecated");
       var args = Array.prototype.slice.call(arguments);
       logger[level].apply(logger, args);
     });
@@ -29,7 +29,7 @@ function getLogger(namespace) {
 
 function makeLogLevel(self, level) {
   return function (msg) {
-    if (typeof msg === 'string') {
+    if (typeof msg === "string") {
       self.emit(level, format.apply(null, arguments));
     } else {
       var args = Array.prototype.slice.call(arguments);
