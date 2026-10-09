@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/gulpjs/glogg/compare/v2.2.0...v3.0.0) (2026-10-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* Normalize repository, dropping Node <22.15.0 ([#12](https://github.com/gulpjs/glogg/issues/12))
+
+### Miscellaneous Chores
+
+* Normalize repository, dropping Node &lt;22.15.0 ([#12](https://github.com/gulpjs/glogg/issues/12)) ([c691b2b](https://github.com/gulpjs/glogg/commit/c691b2b6304931314620c582933778905ed8abf0))
+
 ## [2.2.0](https://www.github.com/gulpjs/glogg/compare/v2.1.0...v2.2.0) (2024-03-23)
 
 
