@@ -10,14 +10,12 @@ var glogg = require("../");
 describe("glogg", function () {
   var logger;
 
-  beforeEach(function (t, done) {
+  beforeEach(function () {
     logger = glogg("glogg-test");
-    done();
   });
 
-  afterEach(function (t, done) {
+  afterEach(function () {
     logger.remove();
-    done();
   });
 
   it("emits a debug event when debug method is called", function (t, done) {
@@ -104,17 +102,15 @@ describe("events on legacy namespace", function () {
   var logger;
   var legacy;
 
-  beforeEach(function (t, done) {
+  beforeEach(function () {
     var namespace = "glogg-test";
     logger = glogg(namespace);
     legacy = sparklesLegacy(namespace);
-    done();
   });
 
-  afterEach(function (t, done) {
+  afterEach(function () {
     logger.remove();
     legacy.remove();
-    done();
   });
 
   it("emits deprecated event and forwards debug to logger", function (t, done) {
